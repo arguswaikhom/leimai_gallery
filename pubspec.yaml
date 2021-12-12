@@ -29,6 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^2.1.0
+  cached_network_image: ^3.2.0
+  flirt_with_style:
+    path: ../flirt_with_style
 
 
   # The following adds the Cupertino Icons font to your application.
