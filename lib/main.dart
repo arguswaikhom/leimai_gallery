@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:leimai_gallery/resources/app_color.dart';
-import 'package:leimai_gallery/views/pages/product_selection_page.dart';
+import 'package:leimai_gallery/views/pages/gallery_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       home: ScrollConfiguration(
         behavior: FSBouncingScrollBehavior(),
-        child: const ProductSelectionPage(),
+        child: const GalleryPage(),
       ),
     );
   }
