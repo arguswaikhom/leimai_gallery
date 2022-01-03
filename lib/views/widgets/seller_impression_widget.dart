@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:leimai_gallery/resources/app_mock.dart';
-import 'package:leimai_gallery/views/widgets/text_header_6.dart';
 
 class BusiinessIntroWidget extends StatelessWidget {
   const BusiinessIntroWidget({Key? key}) : super(key: key);
@@ -9,12 +8,15 @@ class BusiinessIntroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
-        CircleAvatar(
+      children: [
+        const CircleAvatar(
           backgroundImage: CachedNetworkImageProvider(kDummyProductImage),
         ),
-        SizedBox(width: 16.0),
-        TextHeader6('Business account'),
+        const SizedBox(width: 16.0),
+        Text(
+          'Business account',
+          style: Theme.of(context).textTheme.subtitle1,
+        ),
       ],
     );
   }
@@ -25,6 +27,9 @@ class BusinessIntroProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> images = List.from(kProductImages);
+    images.shuffle();
+
     return GridView.count(
       crossAxisCount: 2,
       childAspectRatio: 1.5,
@@ -34,7 +39,7 @@ class BusinessIntroProductWidget extends StatelessWidget {
       children: [
         for (int i = 0; i < 4; i++)
           CachedNetworkImage(
-            imageUrl: kDummyProductImage,
+            imageUrl: images[i],
             fit: BoxFit.cover,
           )
       ],
